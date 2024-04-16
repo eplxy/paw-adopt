@@ -5,17 +5,18 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const homeRouter = require('./routes/home');
-const petsRouter = require('./routes/pets');
-const findRouter = require('./routes/find');
-const dogcareRouter = require('./routes/dogcare');
-const catcareRouter = require('./routes/catcare');
-const contactRouter = require('./routes/contact');
-const giveRouter = require('./routes/givepet');
+const homeRouter = require('./routes/home.js');
+const petsRouter = require('./routes/pets.js');
+const findRouter = require('./routes/find.js');
+const dogcareRouter = require('./routes/dogcare.js');
+const catcareRouter = require('./routes/catcare.js');
+const contactRouter = require('./routes/contact.js');
+const giveRouter = require('./routes/givepet.js');
+const Q123Router = require('./Q123/server.js');
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'public', 'views'));
+app.set('views', [path.join(__dirname, 'public', 'views'), path.join(__dirname, 'Q123', 'views')]);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 
 app.use('/', indexRouter);
+app.use('/Q123', Q123Router);
 app.use('/home', homeRouter);
 app.use('/pets', petsRouter);
 app.use('/find', findRouter);
@@ -56,68 +58,10 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-const port = process.env.port || 8080;
+const PORT = process.env.port || 3000;
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-// })
-
-
-//A3-Q1
-//function A
-function findSummation(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i++) {
-        sum += i;
-    }
-    return sum;
-}
-//function B
-function uppercaseFirstandLast(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1, str.length - 1) + str.charAt(str.length - 1).toUpperCase();
-}
-
-//function C
-function findAverageAndMedian(arr) {
-    sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    let avg = sum / arr.length;
-
-
-    let median = 0;
-    if (arr.length % 2 == 0) {
-        median = arr[arr.length / 2];
-    } else {
-        median = (arr[arr.length / 2] + arr[arr.length / 2 + 1]) / 2;
-    }
-
-    return [avg, median];
-}
-
-//function D
-function find4Digits(str) {
-    let numbers = str.split(' ');
-    let fourdigits;
-
-    for (let i = 0; i < digits.length; i++) {
-        if (numbers[i].length === 4) {
-            fourdigits = numbers[i];
-            break;
-        }
-    }
-
-    //assumption : 0000 is not to be considered as a 4 digit number
-    return fourdigits || false;
-}
-
-
-
-
-
-
-
-
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+})
 
 module.exports = app;
