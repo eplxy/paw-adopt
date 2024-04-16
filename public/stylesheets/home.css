@@ -1,0 +1,15 @@
+#main_images_section p {
+    width: 380px;
+    text-align: justify;
+}
+
+.main h2 {
+    margin-top: 0px;
+    padding-top: 10px;
+    color: whitesmoke;
+    text-shadow: pink -2px 2px, salmon -4px 4px;
+}
+
+#main_image_section {
+    padding: 10px;
+}

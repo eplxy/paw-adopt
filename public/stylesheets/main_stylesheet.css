@@ -1,0 +1,210 @@
+body {
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.main h2 {
+    margin-top: 0px;
+    padding-top: 10px;
+    color: whitesmoke;
+    text-shadow: pink -2px 2px, salmon -4px 4px;
+}
+
+.nav {
+    z-index: 1;
+    background-color: pink;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+.nav table {
+    width: 100%;
+}
+
+.nav table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav img {
+    width: 75px;
+    height: 75px;
+}
+
+.nav_title {
+    text-align: center;
+    text-shadow: pink -2px 2px, salmon -4px 4px;
+}
+
+#nav_time {
+    margin-top: 30px;
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+    /* disable clicking */
+    pointer-events: none;
+    cursor: default;
+}
+
+.nav td {
+    text-align: center;
+    padding: 0px 20px;
+    vertical-align: middle;
+}
+
+.left {
+    margin-right: auto;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.right {
+    margin-right: 0;
+    white-space: nowrap;
+    /* Prevents the content from wrapping */
+    overflow: hidden;
+    /* Hides any overflow content */
+}
+
+
+.right div {
+    display: inline-block;
+    white-space: normal;
+    max-width: 100%;
+    text-align: right;
+}
+
+header {
+    width: 100%;
+    color: white;
+    background-color: rgb(225, 165, 189);
+}
+
+.main {
+
+    background-color: rgb(255, 210, 225);
+    background-clip: border-box;
+    margin-left: 160px;
+    margin-top: 0px;
+    padding: 20px 20px;
+    min-height: 86vh;
+
+
+}
+
+
+.main section {
+    padding: 10px 0px;
+}
+
+.main p {
+    max-width: 80%;
+}
+
+
+
+.horizontal_block {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.sidemenu {
+    height: 100%;
+    overflow: visible;
+    width: 160px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: lightpink;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+}
+
+.sidemenu>nav {
+    position: relative;
+    top: 190px;
+}
+
+.sidemenu>nav>ul {
+    list-style: none;
+    padding: 0px 20px;
+}
+
+.sidemenu>nav>ul li {
+    padding: 15px 0px;
+    border-bottom: 1px rgb(255, 210, 225) solid;
+}
+
+a {
+    color: rgb(106, 49, 70);
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: rgb(160, 40, 70);
+}
+
+a:visited {
+    color: rgb(140, 100, 100);
+}
+
+
+.navfooter {
+    background-color: rgb(210, 130, 135);
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(150, 90, 111, 0.638);
+    opacity: 0;
+    transition: all 0.75s;
+    visibility: hidden;
+}
+
+.popup:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+#disclaimerContent {
+    position: absolute;
+    background-color: rgb(245, 168, 186);
+    width: 300px;
+    border-radius: 8px;
+    padding: 5%;
+}
+
+
+#closeDisclaimer {
+    text-decoration: none;
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: large;
+    font-family: Arial;
+}

@@ -1,0 +1,99 @@
+.list_pet_listings {
+    list-style: none;
+}
+
+.list_pet_listings li{
+    padding: 10px 0px;
+}
+
+.main h2 {
+    margin-top: 0px;
+    padding-top: 10px;
+    color: whitesmoke;
+    text-shadow: pink -2px 2px, salmon -4px 4px;
+}
+
+.main div {
+    border-radius: 10px;
+}
+
+.pet_listing {
+    background-color: rgb(207, 23, 69);
+    display: flex;
+    max-width: 95%;
+    max-height: 250px;
+    border: 1px solid black;
+}
+
+.pet_listing h3 {
+    color: white;
+    text-shadow: 2px -2px salmon;
+    font-weight: bold;
+
+}
+
+.pet_listing p, .pet_listing li {
+    color: whitesmoke;
+}
+
+
+
+
+.pet_listing img {
+    border-radius:10px;
+    background-color: rgb(207, 23, 69);
+    padding: 10px;
+    max-height: inherit;
+}
+
+.pet_listing_info {
+    width: 200px;
+    overflow: auto;
+    padding: 10px 15px;
+}
+
+
+.pet_listing_info ul {
+    list-style: none;
+    align-self: center;
+    padding: 0px 0px;
+}
+
+.pet_listing_info li {
+    padding: 5% 0px;
+}
+
+.pet_listing_moreinfo {
+    width: 75%;
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 15px;
+
+}
+
+.pet_listing_moreinfo>div {
+    overflow: auto;    
+    background-color:  rgb(237, 154, 176);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    height: 50px;
+}
+
+.pet_listing_moreinfo h3 {
+    display: inline;
+}
+
+.pet_listing_moreinfo textarea {
+    resize: none;
+}
+
+.pet_listing_interested {
+    border-radius: 10px;
+    align-self: center;
+    max-width: 200px;
+    height: 80%;
+    max-height: 50px;
+}
