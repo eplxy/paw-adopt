@@ -5,6 +5,13 @@
     text-shadow: pink -2px 2px, salmon -4px 4px;
 }
 
+.main h3 {
+    margin-top: 0px;
+    padding-top: 10px;
+    color: rgb(151, 40, 55);
+    text-shadow: pink -2px 2px
+}
+
 legend{
     color: white;
     text-shadow: 2px -2px salmon;

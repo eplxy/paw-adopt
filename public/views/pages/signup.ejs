@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <%- include('../partials/sidemenu'); %>
+
+            <main class="main">
+                <form id="signup-form" action="" method="post">
+
+                    <h2>Create an account</h2>
+
+                    <ul>
+                        <li>A username can contain letters (both upper and lower case) and digits only.</li>
+                        <li>A password must be at least 4 characters long (characters are to be letters and digits only), have at least one letter and at least one digit.</li>
+                    </ul>
+
+                    <% if (message) { %>
+
+                        <br>
+                        <h3><%= message %></h3>
+                        <br>
+                    <% } %>
+
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <br>
+
+                    <button type="submit">Create Account</button>
+                </form>
+
+            </main>
+
+
+
+            <%- include('../partials/footer'); %>
+</body>
+
+</html>

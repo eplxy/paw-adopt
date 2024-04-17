@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <%- include('../partials/sidemenu'); %>
+
+            <main class="main">
+
+                    <h2>Login</h2>
+
+                    <% if (message) { %>
+                        <br>
+                        <h3><%= message %></h3>
+                        <br>
+                    <% } %>
+
+                <form id="loginForm" action="/login" method="POST">
+
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required pattern="[A-Za-z0-9]+"
+                            title="Username can contain letters and digits only">
+                    </div>
+                    
+                    <br>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required
+                            pattern="(?=.*[A-Za-z])(?=.*\d).{4,}"
+                            title="Password must be at least 4 characters long, have at least one letter and one digit">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </main>
+
+
+
+            <%- include('../partials/footer'); %>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="stylesheets/browse.css">
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <%- include('../partials/sidemenu'); %>
+
+            <main class="main">
+
+                <% if (foundPets.length===0) { %>
+                    <p>No pets were found.</p>
+                    <% } else { %>
+
+                        <h2>
+                            Available for adoption
+                        </h2>
+
+                        <ul class="list_pet_listings">
+                            <% foundPets.forEach(function(pet) { %>
+                                <li>
+                                    <div class="pet_listing">
+                                        <% if (pet[9]) { %>
+                                            <img src="/images/available_pets/<%= pet[2] %>.jpg" alt="Pet Image">
+                                            <% } else { %>
+                                                <img src="/images/paw_print.jpg" alt="Pet Image">
+                                                <% } %>
+                                                    <div class="pet_listing_info">
+
+                                                        <ul>
+                                                            <li><b>Name:</b>
+                                                                <%= pet[2] %>
+                                                            </li>
+                                                            <li><b>Species:</b>
+                                                                <%= pet[3] %>
+                                                            </li>
+                                                            <li><b>Breed:</b>
+                                                                <%= pet[4] %>
+                                                            </li>
+                                                            <li><b>Age:</b>
+                                                                <%= pet[5] %>
+                                                            </li>
+                                                            <li><b>Sex:</b>
+                                                                <%= pet[6] %>
+                                                            </li>
+                                                            <li><b>Gets along with:</b>
+                                                                <%= pet[7] %>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="pet_listing_moreinfo">
+                                                        <div>
+                                                            <h3>Extra info provided by previous owner</h3>
+                                                            <button class="pet_listing_interested">Interested</button>
+                                                        </div>
+                                                        <textarea disabled name="" id="" cols="30"
+                                                            rows="8"><%= pet[8] %></textarea>
+                                                    </div>
+                                    </div>
+                                </li>
+                                <% }) %>
+                        </ul>
+                        <% } %>
+            </main>
+
+
+
+            <%- include('../partials/footer'); %>
+</body>
+
+</html>

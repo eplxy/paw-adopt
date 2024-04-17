@@ -1,54 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>PAW Adoption</title>
-    <link rel="icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="/stylesheets/main_stylesheet.css" type ="text/css">
+    <%- include('../partials/head'); %>
     <link rel="stylesheet" href="/stylesheets/home.css" type = "text/css">
+
 </head>
-
 <body>
+    <%- include('../partials/header'); %>
+    <%- include('../partials/sidemenu'); %>
 
-    <div class="nav">
-        <header>
-            <table>
-                <tr>
-                    <td class="left">
-                        <a href="/">
-                            <img src="/images/nav_logo.png" alt="Adopt a cat/dog logo"></a>
-                    </td>
-                    <td class="center">
-                        <h1 class="nav_title">Precious Animal World</h1>
-                    </td>
-                    <td class="right">
-                        <div>
-                            <a href="#" id="nav_time"></a>
-                        </div>
-                        <script src="/javascripts/time.js" type=""></script>
-                    </td>
-                </tr>
-            </table>
-        </header>
-    </div>
-
-    <div class="sidemenu">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="pets">Browse Available Pets</a></li>
-                <li><a href="Find">Find a dog/cat</a></li>
-                <li><a href="DogCare">Dog Care</a></li>
-                <li><a href="CatCare">Cat Care</a></li>
-                <li><a href="GivePet">Have a pet to give away?</a></li>
-                <li><a href="ContactUs">Contact Us</a></li>
-            </ul>
-        </nav>
-
-    </div>
-
-    <div class="main">
+    <main class="main">
 
         <section>
             <h2>Welcome to Precious Animal World!</h2>
@@ -119,25 +80,13 @@
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p style="font-size: 11px">Batteries not included.</p>
+        
 
 
-    </div>
-    <div id="disclaimerPopup" class="popup">
-        <div id="disclaimerContent">
-            <h3 style="text-align: center;">Disclaimer</h3>
-            <p>
-                Any information disclosed to Precious Animal World (PAW) will not be sold, given away, or misused. PAW
-                also reserves the right to place all responsibility for incorrectly posted information onto the pet
-                owners themselves.
-            </p>
-            <a id="closeDisclaimer" href="#">x</a>
-        </div>
-    </div>
+    </main>
 
 
-    <div class="navfooter">
-        <a href="#disclaimerPopup">View Privacy Disclaimer</a>
-    </div>
+
+    <%- include('../partials/footer'); %>
 </body>
-
 </html>

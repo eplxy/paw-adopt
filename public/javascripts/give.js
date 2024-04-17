@@ -1,6 +1,6 @@
 function validateForm() {
     let invalidFields = "";
-    let animalTypeElements = document.getElementsByName("animal_type");
+    let animalTypeElements = document.getElementsByName("type");
     let animalSelected = false;
     for (let i = 0; i < animalTypeElements.length; i++) {
         if (animalTypeElements[i].checked) {
@@ -75,7 +75,6 @@ function validateEmailTheLongWay(email) {
 
 
 }
-
 
 document.getElementById("submit_button").addEventListener("click", function (event) {
     if (!validateForm()) {

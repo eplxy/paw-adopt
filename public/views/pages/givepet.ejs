@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="stylesheets/give.css">
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <%- include('../partials/sidemenu'); %>
+
+            <main class="main">
+
+                <h2>
+                    Re-Homing A Pet?
+                </h2>
+                <h3>Please fill out this form and we'll be in touch shortly!</h3>
+                <form action="/GivePet" method="post">
+                    <fieldset id="fieldset_animal_type">
+                        <legend>MEOW MEOW? WOOF WOOF?</legend>
+                        <label for="animal_type_cat">Cat</label>
+                        <input type="radio" id="animal_type_cat" name="type" value="Cat">
+                        <label for="animal_type_dog">Dog</label>
+                        <input type="radio" id="animal_type_dog" name="type" value="Dog">
+                    </fieldset>
+
+
+                    <fieldset id="fieldset_animal_info">
+                        <legend>
+                            Your pet's information
+                        </legend>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="name">Name (optional)</label>
+                                    <input type="text" name="name" id="name" value="No name yet!">
+
+                                    <br>
+
+                                    <label for="breed">Breed</label>
+                                    <input type="text" name="breed" id="breed">
+                                    
+                                    <br>
+
+                                    <label for="select_age">Age</label>
+                                    <select name="age" id="select_age">
+                                        <option default value="(!) Please Select (!)">(!) Please Select (!)</option>
+                                        <option value="0to1">0 to 1 years old</option>
+                                        <option value="2to4">2 to 4 years old</option>
+                                        <option value="5to10">5 to 10 years old</option>
+                                        <option value="10+">10+ years old</option>
+                                    </select>
+
+                                    <br>
+
+                                    <label for="female">Female</label>
+                                    <input type="radio" id="female" name="gender" value="Female">
+                                    <label for="male">Male</label>
+                                    <input type="radio" id="male" name="gender" value="Male">
+
+                                    <br>
+
+                                    <p> Does this pet get along with other pets or children ?
+
+                                        <br>(Select all that apply)
+                                    </p>
+                                    <label for="along_with_dogs">Dogs</label>
+                                    <input type="checkbox" id="along_with_dogs" name="get_along" value="Dogs">
+
+                                    <label for="along_with_cats">Cats</label>
+                                    <input type="checkbox" id="along_with_cats" name="get_along" value="Cats">
+
+                                    <label for="along_with_kids">Small Children</label>
+                                    <input type="checkbox" id="along_with_kids" name="get_along" value="Kids">
+                                </td>
+                                <td>
+                                    <label for="comments">Tell us about your pet, feel free to brag as much as you
+                                        want!
+                                        (optional)</label>
+
+                                    <br> <textarea name="comments" id="comments" cols="40" rows="10"></textarea>
+
+
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </fieldset>
+
+
+
+
+                    <fieldset id="fieldset_owner_info">
+                        <legend>Your information</legend>
+                        <label for="owner_first_name">Your first (or given) name</label>
+                        <input type="text" id="owner_first_name" name="owner_first_name">
+                        <br><br>
+                        <label for="owner_last_name">Your last (or family) name</label>
+                        <input type="text" id="owner_last_name" name="owner_last_name">
+                        <br><br>
+                        <label for="owner_email">Your email</label>
+                        <input type="email" id="owner_email" name="owner_email">
+
+                    </fieldset>
+                    <button type="submit" id="submit_button" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+                    
+
+                </form>
+            </main>
+            <script src="javascripts/give.js"></script>
+
+
+            <%- include('../partials/footer'); %>
+</body>
+
+</html>

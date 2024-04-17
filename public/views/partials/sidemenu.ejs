@@ -1,0 +1,20 @@
+<div class="sidemenu">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="Find">Find a dog/cat</a></li>
+            <li><a href="DogCare">Dog Care</a></li>
+            <li><a href="CatCare">Cat Care</a></li>
+            <li><a href="GivePet">Have a pet to give away?</a></li>
+            <li><a href="ContactUs">Contact Us</a></li>
+            
+            <% if (session.loggedin) { %>
+                <li><a href="Logout">Log Out</a></li>
+            <% } else { %>
+                <li><a href="Login">Log In</a></li>
+            <% } %>
+            <li><a href="Signup">Sign Up</a></li>
+        </ul>
+    </nav>
+
+</div>
