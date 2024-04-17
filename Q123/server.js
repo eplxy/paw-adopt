@@ -32,6 +32,7 @@ router.post('/Q1D', (req, res) => {
 
 //Q2
 const numOfVisitsRouter = require('./numOfVisits.js');
+
 router.get('/Q2', numOfVisitsRouter);
 
 //Q3
