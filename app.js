@@ -16,11 +16,10 @@ const giveRouter = require('./routes/givepet.js');
 const signupRouter = require('./routes/signup.js');
 const loginRouter = require('./routes/login.js');
 const logoutRouter = require('./routes/logout.js');
-// const Q123Router = require('./Q123/server.js');
 const app = express();
 
 // view engine setup
-app.set('views', [path.join(__dirname, 'public', 'views', 'pages')]);
+app.set('views', [path.join(__dirname, 'public', 'views', 'pages'), path.join(__dirname, 'Q123', 'views')]);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
@@ -31,6 +30,9 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '/public')));
 
+
+
+
 //session setup
 app.use(session({
     secret: 'secret',
@@ -38,14 +40,18 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 app.use(function (req, res, next) {
     res.locals.session = req.session;
     next();
 });
 
+//Questions 1, 2 and 3 running on port 3000.
+const Q123Router = require('./Q123/server.js');
+app.use('/', Q123Router);
+
 
 app.use('/', indexRouter);
-// app.use('/Q123', Q123Router);
 app.use('/home', homeRouter);
 app.use('/pets', petsRouter);
 app.use('/find', findRouter);
@@ -77,10 +83,10 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-const PORT = process.env.port || 3001;
+// const PORT = process.env.port || 3001;
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// })
 
 module.exports = app;

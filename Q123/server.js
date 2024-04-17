@@ -1,39 +1,29 @@
 const express = require('express');
-const app = express();
-const path = require('path');
-const cookieParser = require('cookie-parser');
+const router = express.Router();
 
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.set('views',  path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-
-app.get('/Q123', (req, res) => {
+router.get('/Q123', (req, res) => {
     res.render('Q123index', { title: 'Q123' });
 });
 
-app.post('/Q1A', (req, res) => {
+router.post('/Q1A', (req, res) => {
     const { number } = req.body;
     const result = findSummation(Number(number));
     res.send(`The result is ${result}`);
 });
 
-app.post('/Q1B', (req, res) => {
+router.post('/Q1B', (req, res) => {
     const { str } = req.body;
     const result = uppercaseFirstandLast(str);
     res.send(`The result is ${result}`);
 });
 
-app.post('/Q1C', (req, res) => {
+router.post('/Q1C', (req, res) => {
     const { arr } = req.body;
     const result = findAverageAndMedian(arr);
     res.send(`The average is ${result[0]} and the median is ${result[1]}`);
 });
 
-app.post('/Q1D', (req, res) => {
+router.post('/Q1D', (req, res) => {
     const { str } = req.body;
     const result = find4Digits(str);
     res.send(`The result is ${result}`);
@@ -41,13 +31,12 @@ app.post('/Q1D', (req, res) => {
 
 
 //Q2
-app.use(cookieParser());
 const numOfVisitsRouter = require('./numOfVisits.js');
-app.use('/Q2', numOfVisitsRouter);
+router.get('/Q2', numOfVisitsRouter);
 
 //Q3
 const phoneNumbersRouter = require('./phoneNumbers.js');
-app.use('/Q3', phoneNumbersRouter);
+router.get('/Q3', phoneNumbersRouter);
 
 
 
@@ -108,8 +97,5 @@ function find4Digits(str) {
     return fourdigits || false;
 }
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
 
-module.exports = app;
+module.exports = router;

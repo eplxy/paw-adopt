@@ -21,6 +21,8 @@ router.post('/', function (req, res, next) {
     const username = req.body.username;
     const password = req.body.password;
 
+    const users = fs.readFileSync('./textfiles/users.txt', 'utf8').split('\n').map(line => line.split(':')[0]);
+
     if (!validateUsername(username)) {
         res.render('signup', { message: 'Invalid username' });
         return;
