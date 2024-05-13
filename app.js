@@ -46,13 +46,14 @@ app.use(function (req, res, next) {
     next();
 });
 
+//Comment out for website only.
 //Questions 1, 2 and 3 running on port 3000.
-const Q123Router = require('./Q123/server.js');
-app.use('/', Q123Router);
-const numOfVisitsRouter = require('./Q123/numOfVisits.js');
-app.use('/Q2', numOfVisitsRouter);
-const phoneNumbersRouter = require('./Q123/phoneNumbers.js');
-app.use('/Q3', phoneNumbersRouter);
+// const Q123Router = require('./Q123/server.js'); 
+// app.use('/', Q123Router);
+// const numOfVisitsRouter = require('./Q123/numOfVisits.js');
+// app.use('/Q2', numOfVisitsRouter);
+// const phoneNumbersRouter = require('./Q123/phoneNumbers.js');
+// app.use('/Q3', phoneNumbersRouter);
 
 
 app.use('/', indexRouter);
